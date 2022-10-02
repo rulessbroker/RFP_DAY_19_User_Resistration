@@ -27,11 +27,23 @@ public class UserRegistration {
 		}
 	}
 
+	public void checkEmail() {
+		System.out.println("Enter Email : ");
+		String email = sc.nextLine();
+		if (Pattern.matches("^[a-z]+([.$][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2})?$", email)) {
+			System.out.println("Email is regestried sucessfully");
+		} else {
+			System.out.println("Email pattern is not matched");
+		}
+	}
+
 	public static void main(String[] args) {
 
 		UserRegistration input = new UserRegistration();
 		input.checkFirstName();
 
 		input.checkLastName();
+
+		input.checkEmail();
 	}
 }
