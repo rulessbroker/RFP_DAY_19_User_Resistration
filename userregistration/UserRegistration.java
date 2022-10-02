@@ -37,6 +37,16 @@ public class UserRegistration {
 		}
 	}
 
+	public void checkPhoneNo() {
+		System.out.println("Enter Phone No : ");
+		String phoneNo = sc.nextLine();
+		if (Pattern.matches("^(91)?\\s{0,2}[0-9]{10}$", phoneNo)) {
+			System.out.println("Phone Number is regestried sucessfully");
+		} else {
+			System.out.println("Phone Number pattern is not matched");
+		}
+	}
+
 	public static void main(String[] args) {
 
 		UserRegistration input = new UserRegistration();
@@ -45,5 +55,7 @@ public class UserRegistration {
 		input.checkLastName();
 
 		input.checkEmail();
+
+		input.checkPhoneNo();
 	}
 }
