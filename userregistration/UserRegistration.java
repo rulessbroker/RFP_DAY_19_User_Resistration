@@ -30,10 +30,27 @@ public class UserRegistration {
 	public void checkEmail() {
 		System.out.println("Enter Email : ");
 		String email = sc.nextLine();
+
 		if (Pattern.matches("^[a-z]+([.$][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2})?$", email)) {
 			System.out.println("Email is regestried sucessfully");
 		} else {
 			System.out.println("Email pattern is not matched");
+		}
+		
+		String[] validEmail = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com",
+				"abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" };
+		for (String s : validEmail) {
+			if (email.equals(s)) {
+				System.out.println("email is valid");
+			}
+		}
+		String[] inValidEmail = { "abc", "abc@.com.my", "abc123@gmail.a", "abc123@.com", "abc123@.com.com",
+				"abc()*@gmail.com", "abc@%*.com", "abc..2002@gmail.com", "abc.@gmail.com", "abc@abc@gmail.com",
+				"abc@gmail.com.1a", "abc@gmail.com.aa.au" };
+		for (String s : inValidEmail) {
+			if (email.equals(s)) {
+				System.out.println("email is invalid");
+			}
 		}
 	}
 
@@ -46,16 +63,16 @@ public class UserRegistration {
 			System.out.println("Phone Number pattern is not matched");
 		}
 	}
-	
+
 	public void checkPassword() {
 		System.out.println("Enter Password : ");
 		String password = sc.nextLine();
-		if(Pattern.matches("((?=.*\\d)(?=.*[A-Z])(?=.*\\W).{8,})",password)){
+		if (Pattern.matches("((?=.*\\d)(?=.*[A-Z])(?=.*\\W).{8,})", password)) {
 			System.out.println("password is regestried sucessfully");
-		}
-		else {
+		} else {
 			System.out.println("password pattern is not matched");
 		}
+
 	}
 
 	public static void main(String[] args) {
@@ -68,7 +85,7 @@ public class UserRegistration {
 		input.checkEmail();
 
 		input.checkPhoneNo();
-		
+
 		input.checkPassword();
 	}
 }
