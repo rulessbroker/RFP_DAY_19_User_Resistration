@@ -50,7 +50,7 @@ public class UserRegistration {
 	public void checkPassword() {
 		System.out.println("Enter Password : ");
 		String password = sc.nextLine();
-		if(Pattern.matches("^[A-Z]{1}[0-9]{1}[a-z]{6}$",password)){
+		if(Pattern.matches("((?=.*\\d)(?=.*[A-Z])(?=.*\\W).{8,})",password)){
 			System.out.println("password is regestried sucessfully");
 		}
 		else {
@@ -61,13 +61,13 @@ public class UserRegistration {
 	public static void main(String[] args) {
 
 		UserRegistration input = new UserRegistration();
-//		input.checkFirstName();
-//
-//		input.checkLastName();
-//
-//		input.checkEmail();
-//
-//		input.checkPhoneNo();
+		input.checkFirstName();
+
+		input.checkLastName();
+
+		input.checkEmail();
+
+		input.checkPhoneNo();
 		
 		input.checkPassword();
 	}
