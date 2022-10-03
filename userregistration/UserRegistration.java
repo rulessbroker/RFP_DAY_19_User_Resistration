@@ -50,7 +50,7 @@ public class UserRegistration {
 	public void checkPassword() {
 		System.out.println("Enter Password : ");
 		String password = sc.nextLine();
-		if(Pattern.matches("^[A-Z]{1}[a-z]{7}$",password)){
+		if(Pattern.matches("^[A-Z]{1}[0-9]{1}[a-z]{6}$",password)){
 			System.out.println("password is regestried sucessfully");
 		}
 		else {
